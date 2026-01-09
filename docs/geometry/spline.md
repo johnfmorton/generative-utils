@@ -33,7 +33,7 @@ spline(points, tension, close, callback)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, spline } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('basic-spline')
@@ -59,7 +59,7 @@ svg.path(pathData)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, spline } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('blob-shape')
@@ -92,7 +92,7 @@ svg.path(pathData)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { spline } from '@georgedoescode/generative-utils'
+import { spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 300)
 
@@ -129,7 +129,7 @@ points.forEach(p => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, spline } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('callback-example')
@@ -166,7 +166,7 @@ allPoints.forEach((p, i) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, spline } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('flowing-lines')

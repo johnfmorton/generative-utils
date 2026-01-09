@@ -34,7 +34,7 @@ map(n, start1, end1, start2, end2)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createNoiseGrid, map } from '@georgedoescode/generative-utils'
+import { createNoiseGrid, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -59,7 +59,7 @@ noiseGrid.cells.forEach(cell => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, map } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('position-to-size')
@@ -82,7 +82,7 @@ for (let i = 0; i < 50; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, map } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('distance-opacity')
@@ -114,7 +114,7 @@ for (let i = 0; i < 100; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { map } from '@georgedoescode/generative-utils'
+import { map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -137,7 +137,7 @@ for (let i = 0; i < numCircles; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { map } from '@georgedoescode/generative-utils'
+import { map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -165,7 +165,7 @@ for (let i = 0; i < numPoints; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, map } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('inverted')
@@ -187,7 +187,7 @@ for (let i = 0; i < 30; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { map } from '@georgedoescode/generative-utils'
+import { map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 100)
 

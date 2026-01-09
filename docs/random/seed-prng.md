@@ -30,7 +30,7 @@ seedPRNG(seed)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random } from '@georgedoescode/generative-utils'
+import { seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -53,7 +53,7 @@ for (let i = 0; i < 10; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random } from '@georgedoescode/generative-utils'
+import { seedPRNG, random } from '@johnfmorton/generative-utils'
 
 function generateArtwork(seed) {
   const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)

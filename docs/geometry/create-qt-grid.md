@@ -58,7 +58,7 @@ createQtGrid(options)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createQtGrid } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createQtGrid } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('basic-qtgrid')
@@ -93,7 +93,7 @@ grid.areas.forEach(area => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, randomBias, createQtGrid } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, randomBias, createQtGrid } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('clustered-grid')
@@ -140,7 +140,7 @@ points.forEach(p => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createQtGrid } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createQtGrid } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 600, 400)
 seedPRNG('depth-comparison')
@@ -185,7 +185,7 @@ levels.forEach((maxQtLevels, col) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createQtGrid } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createQtGrid } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('gap-example')
@@ -219,7 +219,7 @@ grid.areas.forEach(area => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createQtGrid } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createQtGrid } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('content-grid')

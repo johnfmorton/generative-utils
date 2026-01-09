@@ -32,7 +32,7 @@ distToSegment(point, segmentStart, segmentEnd)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { distToSegment } from '@georgedoescode/generative-utils'
+import { distToSegment } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -70,7 +70,7 @@ testPoints.forEach(point => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, distToSegment, map } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, distToSegment, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('proximity-color')
@@ -103,7 +103,7 @@ for (let i = 0; i < 100; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createCoordsTransformer, distToSegment } from '@georgedoescode/generative-utils'
+import { createCoordsTransformer, distToSegment } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -145,7 +145,7 @@ svg.node.addEventListener('mousemove', (event) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, distToSegment } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, distToSegment } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('collision-avoid')
@@ -195,7 +195,7 @@ while (placed < 50 && attempts < 500) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { distToSegment, map } from '@georgedoescode/generative-utils'
+import { distToSegment, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -232,7 +232,7 @@ svg.line(segmentStart[0], segmentStart[1], segmentEnd[0], segmentEnd[1])
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, distToSegment } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, distToSegment } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('perpendicular')

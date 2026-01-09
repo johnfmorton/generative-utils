@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a JavaScript library (`@georgedoescode/generative-utils`) providing utility functions for generative art. It's published as an npm package with both ESM and CommonJS builds.
+This is a JavaScript library (`@johnfmorton/generative-utils`) providing utility functions for generative art. It's published as an npm package with both ESM and CommonJS builds.
 
 ## Build Commands
 

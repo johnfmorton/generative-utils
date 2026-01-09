@@ -52,7 +52,7 @@ createNoiseGrid(options)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createNoiseGrid, map } from '@georgedoescode/generative-utils'
+import { createNoiseGrid, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -79,7 +79,7 @@ noiseGrid.cells.forEach(cell => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createNoiseGrid, map } from '@georgedoescode/generative-utils'
+import { createNoiseGrid, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -116,7 +116,7 @@ noiseGrid.cells.forEach(cell => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createNoiseGrid, map } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createNoiseGrid, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('lookup-example')
@@ -154,7 +154,7 @@ for (let i = 0; i < 100; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createNoiseGrid, map, spline } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createNoiseGrid, map, spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('particle-trails')
@@ -205,7 +205,7 @@ for (let i = 0; i < 50; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createNoiseGrid, map } from '@georgedoescode/generative-utils'
+import { createNoiseGrid, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 600, 200)
 
@@ -242,7 +242,7 @@ increments.forEach((inc, col) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createNoiseGrid, map } from '@georgedoescode/generative-utils'
+import { createNoiseGrid, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 

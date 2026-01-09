@@ -5,14 +5,14 @@ A collection of utility functions for generative art, designed to work with SVG.
 ## Installation
 
 ```bash
-npm install @georgedoescode/generative-utils
+npm install @johnfmorton/generative-utils
 ```
 
 ## Quick Example
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, spline } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 

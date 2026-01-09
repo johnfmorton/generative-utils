@@ -33,7 +33,7 @@ randomBias(min, max, bias, influence)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, randomBias } from '@georgedoescode/generative-utils'
+import { seedPRNG, randomBias } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('center-cluster')
@@ -54,7 +54,7 @@ for (let i = 0; i < 100; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, randomBias } from '@georgedoescode/generative-utils'
+import { seedPRNG, randomBias } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 300)
 seedPRNG('influence-comparison')
@@ -85,7 +85,7 @@ influences.forEach((influence, row) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, randomBias } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, randomBias } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('biased-sizes')
@@ -107,7 +107,7 @@ for (let i = 0; i < 40; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, randomBias } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, randomBias } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('focal-points')

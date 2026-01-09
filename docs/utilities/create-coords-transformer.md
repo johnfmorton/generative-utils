@@ -36,7 +36,7 @@ transformCoords(event) → { x: number, y: number }
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createCoordsTransformer } from '@georgedoescode/generative-utils'
+import { createCoordsTransformer } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -59,7 +59,7 @@ document.addEventListener('mousemove', (event) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createCoordsTransformer, seedPRNG, random } from '@georgedoescode/generative-utils'
+import { createCoordsTransformer, seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('click-drawing')
@@ -84,7 +84,7 @@ svg.node.addEventListener('click', (event) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createCoordsTransformer, createNoiseGrid, map } from '@georgedoescode/generative-utils'
+import { createCoordsTransformer, createNoiseGrid, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -119,7 +119,7 @@ svg.node.addEventListener('mousemove', (event) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createCoordsTransformer, spline } from '@georgedoescode/generative-utils'
+import { createCoordsTransformer, spline } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -166,7 +166,7 @@ svg.node.addEventListener('mouseup', () => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createCoordsTransformer, seedPRNG, random, map } from '@georgedoescode/generative-utils'
+import { createCoordsTransformer, seedPRNG, random, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('proximity')
@@ -216,7 +216,7 @@ svg.node.addEventListener('mousemove', (event) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { createCoordsTransformer, seedPRNG, random } from '@georgedoescode/generative-utils'
+import { createCoordsTransformer, seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('touch-support')

@@ -49,7 +49,7 @@ createVoronoiDiagram(options)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createVoronoiDiagram } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createVoronoiDiagram } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('basic-voronoi')
@@ -86,7 +86,7 @@ diagram.cells.forEach(cell => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createVoronoiDiagram } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createVoronoiDiagram } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('centroid-labels')
@@ -128,7 +128,7 @@ diagram.cells.forEach((cell, index) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createVoronoiDiagram } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createVoronoiDiagram } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('inner-circles')
@@ -170,7 +170,7 @@ diagram.cells.forEach(cell => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createVoronoiDiagram } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createVoronoiDiagram } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 800, 400)
 
@@ -216,7 +216,7 @@ iterations.forEach((relaxIterations, col) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, createVoronoiDiagram } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, createVoronoiDiagram } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('neighbor-effect')

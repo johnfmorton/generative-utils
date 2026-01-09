@@ -46,7 +46,7 @@ random(array)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random } from '@georgedoescode/generative-utils'
+import { seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('random-positions')
@@ -64,7 +64,7 @@ for (let i = 0; i < 20; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random } from '@georgedoescode/generative-utils'
+import { seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('grid-example')
@@ -92,7 +92,7 @@ for (let y = 0; y < 400; y += gridSize) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random } from '@georgedoescode/generative-utils'
+import { seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('color-palette')
@@ -120,7 +120,7 @@ for (let i = 0; i < 15; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random } from '@georgedoescode/generative-utils'
+import { seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('combined-example')

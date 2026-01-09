@@ -31,7 +31,7 @@ pointsInPath(pathElement, numPoints)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { pointsInPath } from '@georgedoescode/generative-utils'
+import { pointsInPath } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -58,7 +58,7 @@ points.forEach(point => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, spline, pointsInPath } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, spline, pointsInPath } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('dotted-line')
@@ -93,7 +93,7 @@ points.forEach((point, i) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { pointsInPath, map } from '@georgedoescode/generative-utils'
+import { pointsInPath, map } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -119,7 +119,7 @@ points.forEach((point, i) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { pointsInPath } from '@georgedoescode/generative-utils'
+import { pointsInPath } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 200)
 
@@ -145,7 +145,7 @@ points.forEach((point, i) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, spline, pointsInPath } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, spline, pointsInPath } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('shapes-along-path')
@@ -185,7 +185,7 @@ points.forEach((point, i) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { pointsInPath } from '@georgedoescode/generative-utils'
+import { pointsInPath } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 
@@ -215,7 +215,7 @@ points1.forEach((p1, i) => {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { pointsInPath, spline, seedPRNG, random } from '@georgedoescode/generative-utils'
+import { pointsInPath, spline, seedPRNG, random } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('animation-path')

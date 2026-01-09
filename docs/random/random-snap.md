@@ -32,7 +32,7 @@ randomSnap(min, max, snapInc)
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, randomSnap } from '@georgedoescode/generative-utils'
+import { seedPRNG, randomSnap } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('grid-snap')
@@ -54,7 +54,7 @@ for (let i = 0; i < 20; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, randomSnap } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, randomSnap } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('quantized-sizes')
@@ -76,7 +76,7 @@ for (let i = 0; i < 15; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, randomSnap } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, randomSnap } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('stepped-rotation')
@@ -98,7 +98,7 @@ for (let i = 0; i < 12; i++) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, randomSnap } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, randomSnap } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 100)
 seedPRNG('rhythm-pattern')
@@ -123,7 +123,7 @@ while (x < 400) {
 
 ```javascript
 import { SVG } from '@svgdotjs/svg.js'
-import { seedPRNG, random, randomSnap } from '@georgedoescode/generative-utils'
+import { seedPRNG, random, randomSnap } from '@johnfmorton/generative-utils'
 
 const svg = SVG().addTo('#container').viewbox(0, 0, 400, 400)
 seedPRNG('color-steps')

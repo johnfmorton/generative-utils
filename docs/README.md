@@ -58,7 +58,7 @@ import {
   random,
   spline,
   createVoronoiDiagram
-} from '@georgedoescode/generative-utils'
+} from '@johnfmorton/generative-utils'
 ```
 
 ### CommonJS
@@ -69,5 +69,5 @@ const {
   random,
   spline,
   createVoronoiDiagram
-} = require('@georgedoescode/generative-utils')
+} = require('@johnfmorton/generative-utils')
 ```
