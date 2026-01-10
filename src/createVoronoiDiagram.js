@@ -7,6 +7,7 @@ const defaultOpts = {
   height: 1024,
   points: [],
   relaxIterations: 8,
+  relaxationFactor: 0.5,
 };
 
 function createVoronoiDiagram(opts) {
@@ -30,8 +31,8 @@ function createVoronoiDiagram(opts) {
 
       const [x1, y1] = polygonCentroid(cell);
 
-      delaunay.points[i] = x0 + (x1 - x0) * 1;
-      delaunay.points[i + 1] = y0 + (y1 - y0) * 1;
+      delaunay.points[i] = x0 + (x1 - x0) * opts.relaxationFactor;
+      delaunay.points[i + 1] = y0 + (y1 - y0) * opts.relaxationFactor;
     }
 
     voronoi.update();
@@ -47,31 +48,34 @@ function createVoronoiDiagram(opts) {
     });
   }
 
-  let cells = [];
+  const cells = [];
+  const pointIndexToCell = new Map();
 
   for (let i = 0; i < delaunay.points.length; i += 2) {
-    const cell = voronoi.cellPolygon(i >> 1);
+    const pointIndex = i >> 1;
+    const cell = voronoi.cellPolygon(pointIndex);
 
     if (cell === null) continue;
 
-    cells.push({
+    const cellObj = {
       ...formatCell(cell),
-      neighbors: [...voronoi.neighbors(i)].map((index) => {
-        return {
-          ...formatCell(voronoi.cellPolygon(index)),
-        };
-      }),
-    });
+      _pointIndex: pointIndex,
+      neighbors: [],
+    };
+    cells.push(cellObj);
+    pointIndexToCell.set(pointIndex, cellObj);
+  }
+
+  for (const cell of cells) {
+    const neighborIndices = [...voronoi.neighbors(cell._pointIndex)];
+    cell.neighbors = neighborIndices
+      .map((idx) => pointIndexToCell.get(idx))
+      .filter((neighbor) => neighbor !== undefined);
+    delete cell._pointIndex;
   }
 
   return {
-    cells: cells.map((cell, index) => {
-      const neighbors = [...voronoi.neighbors(index)];
-
-      cell.neighbors = neighbors.map((index) => cells[index]);
-
-      return cell;
-    }),
+    cells,
     points: diagramPoints,
   };
 }
@@ -90,20 +94,21 @@ function formatCell(points) {
 function getClosestEdgeToCentroid(points) {
   const centroid = polygonCentroid(points);
   const pointsSorted = sortPointsByAngle(centroid, points);
+  const numPoints = pointsSorted.length;
 
-  let closest = distToSegment(centroid, pointsSorted[0], pointsSorted[1]);
+  if (numPoints < 2) {
+    return 0;
+  }
 
-  for (let i = 1; i < points.length - 1; i++) {
-    if (points[i + 1]) {
-      const dist = distToSegment(
-        centroid,
-        pointsSorted[i],
-        pointsSorted[i + 1]
-      );
+  let closest = Infinity;
 
-      if (dist < closest) {
-        closest = dist;
-      }
+  for (let i = 0; i < numPoints; i++) {
+    const p1 = pointsSorted[i];
+    const p2 = pointsSorted[(i + 1) % numPoints];
+    const dist = distToSegment(centroid, p1, p2);
+
+    if (dist < closest) {
+      closest = dist;
     }
   }
 
@@ -111,15 +116,12 @@ function getClosestEdgeToCentroid(points) {
 }
 
 function sortPointsByAngle(centroid, points) {
-  const centerPoint = centroid;
   const sorted = points.slice(0);
 
   const sortByAngle = (p1, p2) => {
     return (
-      (Math.atan2(p1[1] - centerPoint[1], p1[0] - centerPoint[0]) * 180) /
-        Math.PI -
-      (Math.atan2(p2[1] - centerPoint[1], p2[0] - centerPoint[0]) * 180) /
-        Math.PI
+      Math.atan2(p1[1] - centroid[1], p1[0] - centroid[0]) -
+      Math.atan2(p2[1] - centroid[1], p2[0] - centroid[0])
     );
   };
 

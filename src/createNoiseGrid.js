@@ -40,20 +40,17 @@ function createNoiseGrid(opts) {
     let xOff = 0;
 
     for (let x = 0; x < opts.width; x += colSize) {
-      if (
-        Math.floor(x + colSize) <= opts.width &&
-        Math.floor(y + rowSize) <= opts.height
-      ) {
-        cells[Math.round(x / colSize + (y / rowSize) * numCols)] = {
-          x,
-          y,
-          width: colSize,
-          height: rowSize,
-          noiseValue: simplex.noise2D(xOff, yOff),
-        };
+      const col = Math.floor(x / colSize);
+      const row = Math.floor(y / rowSize);
+      cells[col + row * numCols] = {
+        x,
+        y,
+        width: colSize,
+        height: rowSize,
+        noiseValue: simplex.noise2D(xOff, yOff),
+      };
 
-        xOff += opts.xInc;
-      }
+      xOff += opts.xInc;
     }
 
     yOff += opts.yInc;
