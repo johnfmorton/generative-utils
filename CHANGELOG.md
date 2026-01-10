@@ -17,8 +17,26 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **lerp**: Linear interpolation between two values
+- **clamp**: Constrain a value within a range (min/max bounds)
+- **vec2**: Complete 2D vector operations library with 20+ functions:
+  - `create`, `add`, `subtract`, `multiply`, `divide`
+  - `magnitude`, `magnitudeSquared`, `normalize`
+  - `distance`, `distanceSquared`
+  - `dot`, `cross`
+  - `rotate`, `rotateAround`
+  - `lerp` (exported as `vecLerp`), `angle`, `angleBetween`, `fromAngle`
+  - `perpendicular`, `reflect`, `limit`, `setMagnitude`
+- **polygon**: Generate regular polygon vertices with configurable sides, radius, center, and rotation
+- **star**: Generate star polygon vertices with configurable points, inner/outer radii, center, and rotation
+- **pointsToPath**: Convert an array of points to an SVG path string
+- **poissonDisc**: Poisson disc sampling using Bridson's algorithm for evenly-distributed point generation
 - **createVoronoiDiagram**: New `relaxationFactor` option (default: 0.5) for controlling Lloyd's relaxation convergence speed
 - **spline**: New `segmentCount` parameter (default: 20) for controlling curve smoothness
+
+### Documentation
+
+- Added JSDoc type annotations to all utility functions for better IDE support and type hints
 
 ### Changed
 
