@@ -56,7 +56,7 @@ function createVoronoiDiagram(opts) {
 
     cells.push({
       ...formatCell(cell),
-      neighbors: [...voronoi.neighbors(i)].map((index) => {
+      neighbors: [...voronoi.neighbors(i >> 1)].map((index) => {
         return {
           ...formatCell(voronoi.cellPolygon(index)),
         };
