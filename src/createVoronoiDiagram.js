@@ -2,6 +2,20 @@ import { Delaunay } from "d3-delaunay";
 import { polygonCentroid } from "d3";
 import { distToSegment } from "./distToSegment";
 
+/**
+ * @typedef {Object} VoronoiCell
+ * @property {Array<[number, number]>} points - Polygon vertices as [x, y] pairs
+ * @property {number} innerCircleRadius - Radius of largest circle that fits inside the cell
+ * @property {{x: number, y: number}} centroid - Center of the cell
+ * @property {VoronoiCell[]} neighbors - Adjacent cells
+ */
+
+/**
+ * @typedef {Object} VoronoiResult
+ * @property {VoronoiCell[]} cells - Array of Voronoi cells
+ * @property {Array<{x: number, y: number}>} points - Relaxed seed points
+ */
+
 const defaultOpts = {
   width: 1024,
   height: 1024,
@@ -10,6 +24,28 @@ const defaultOpts = {
   relaxationFactor: 0.5,
 };
 
+/**
+ * Create a Voronoi tessellation with Lloyd's relaxation for more uniform cells.
+ *
+ * @param {Object} [opts] - Configuration options
+ * @param {number} [opts.width=1024] - Diagram width
+ * @param {number} [opts.height=1024] - Diagram height
+ * @param {Array<{x: number, y: number}>} [opts.points=[]] - Seed points for cells
+ * @param {number} [opts.relaxIterations=8] - Number of Lloyd relaxation iterations
+ * @param {number} [opts.relaxationFactor=0.5] - How far to move toward centroid each iteration (0-1)
+ * @returns {VoronoiResult} Voronoi diagram with cells and relaxed points
+ * @example
+ * const { cells, points } = createVoronoiDiagram({
+ *   width: 800,
+ *   height: 600,
+ *   points: [{x: 100, y: 100}, {x: 400, y: 300}],
+ *   relaxIterations: 10
+ * })
+ * cells.forEach(cell => {
+ *   drawPolygon(cell.points)
+ *   drawCircle(cell.centroid.x, cell.centroid.y, cell.innerCircleRadius)
+ * })
+ */
 function createVoronoiDiagram(opts) {
   opts = Object.assign({}, defaultOpts, opts);
 

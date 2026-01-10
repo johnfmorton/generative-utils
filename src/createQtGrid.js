@@ -1,5 +1,24 @@
 import Quadtree from "@timohausmann/quadtree-js";
 
+/**
+ * @typedef {Object} QtGridArea
+ * @property {number} x - X position (with gap applied)
+ * @property {number} y - Y position (with gap applied)
+ * @property {number} width - Width (with gap applied)
+ * @property {number} height - Height (with gap applied)
+ * @property {{start: number, end: number}} col - Column range in grid units
+ * @property {{start: number, end: number}} row - Row range in grid units
+ */
+
+/**
+ * @typedef {Object} QtGridResult
+ * @property {number} width - Total grid width
+ * @property {number} height - Total grid height
+ * @property {number} cols - Number of columns at maximum subdivision
+ * @property {number} rows - Number of rows at maximum subdivision
+ * @property {QtGridArea[]} areas - Array of subdivided areas
+ */
+
 const defaultQtOpts = {
   width: 1024,
   height: 1024,
@@ -36,6 +55,27 @@ function getIndividualQtNodes(node) {
   return individualNodes;
 }
 
+/**
+ * Create an adaptive grid using quadtree subdivision based on point density.
+ * Areas with more points subdivide further, creating varied cell sizes.
+ *
+ * @param {Object} [opts] - Configuration options
+ * @param {number} [opts.width=1024] - Grid width
+ * @param {number} [opts.height=1024] - Grid height
+ * @param {Array<{x: number, y: number}>} [opts.points=[]] - Points that drive subdivision
+ * @param {number} [opts.gap=0] - Gap between cells
+ * @param {number} [opts.maxQtObjects=10] - Max points per cell before subdividing
+ * @param {number} [opts.maxQtLevels=4] - Maximum subdivision depth
+ * @returns {QtGridResult} Grid with subdivided areas
+ * @example
+ * const grid = createQtGrid({
+ *   width: 800,
+ *   height: 600,
+ *   points: [{x: 100, y: 100}, {x: 105, y: 105}],
+ *   maxQtLevels: 3
+ * })
+ * grid.areas.forEach(area => drawRect(area.x, area.y, area.width, area.height))
+ */
 function createQtGrid(opts) {
   opts = Object.assign({}, defaultQtOpts, opts);
 

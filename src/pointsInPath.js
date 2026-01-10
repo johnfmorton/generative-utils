@@ -1,3 +1,13 @@
+/**
+ * Extract evenly-spaced points along an SVG path element.
+ *
+ * @param {SVGPathElement} path - An SVG path DOM element
+ * @param {number} [numPoints=10] - Number of points to extract
+ * @returns {Array<{x: number, y: number}>} Array of points along the path
+ * @example
+ * const pathEl = document.querySelector('path')
+ * const points = pointsInPath(pathEl, 20)
+ */
 function pointsInPath(path, numPoints = 10) {
   if (numPoints < 1) {
     return []
