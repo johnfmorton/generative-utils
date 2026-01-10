@@ -7,6 +7,7 @@ const defaultOpts = {
   height: 1024,
   points: [],
   relaxIterations: 8,
+  relaxationFactor: 0.5,
 };
 
 function createVoronoiDiagram(opts) {
@@ -30,8 +31,8 @@ function createVoronoiDiagram(opts) {
 
       const [x1, y1] = polygonCentroid(cell);
 
-      delaunay.points[i] = x0 + (x1 - x0) * 1;
-      delaunay.points[i + 1] = y0 + (y1 - y0) * 1;
+      delaunay.points[i] = x0 + (x1 - x0) * opts.relaxationFactor;
+      delaunay.points[i + 1] = y0 + (y1 - y0) * opts.relaxationFactor;
     }
 
     voronoi.update();
