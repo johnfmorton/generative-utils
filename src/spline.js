@@ -1,4 +1,4 @@
-function spline(points = [], tension = 0.5, close = false, cb) {
+function spline(points = [], tension = 0.5, close = false, cb, segmentCount = 20) {
 
     let tensionInv  = tension * 0.5;
     if (points.length < 2) return ''
@@ -37,7 +37,6 @@ function spline(points = [], tension = 0.5, close = false, cb) {
     cb && cb('MOVE', [points[0].x, points[0].y])
 
     const numPoints = points.length
-    const segmentCount = 20 // Number of segments between control points
     const loopLimit = close ? numPoints : numPoints - 1
 
     for (let i = 0; i < loopLimit; i++) {
