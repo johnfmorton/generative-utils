@@ -1,3 +1,16 @@
+/**
+ * Generate a smooth Catmull-Rom spline curve as an SVG path string.
+ *
+ * @param {Array<{x: number, y: number}>} [points=[]] - Array of control points
+ * @param {number} [tension=0.5] - Curve tension (0 = sharp corners, 1 = smooth)
+ * @param {boolean} [close=false] - Whether to close the path
+ * @param {function} [cb] - Optional callback called with ('MOVE'|'LINE', [x, y]) for each path command
+ * @param {number} [segmentCount=20] - Number of line segments per curve section (higher = smoother)
+ * @returns {string} SVG path string (e.g., "M0,0L10,10L20,5...")
+ * @example
+ * const path = spline([{x: 0, y: 0}, {x: 50, y: 100}, {x: 100, y: 0}])
+ * // Use in SVG: <path d={path} />
+ */
 function spline(points = [], tension = 0.5, close = false, cb, segmentCount = 20) {
 
     let tensionInv  = tension * 0.5;

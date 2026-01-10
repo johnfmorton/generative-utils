@@ -11,9 +11,15 @@ function dist2(v, w) {
   return sqr(v[0] - w[0]) + sqr(v[1] - w[1]);
 }
 
-// p - point
-// v - start point of segment
-// w - end point of segment
+/**
+ * Calculate the squared distance from a point to a line segment.
+ * Use this instead of distToSegment when comparing distances (avoids sqrt).
+ *
+ * @param {[number, number]} p - Point as [x, y]
+ * @param {[number, number]} v - Segment start point as [x, y]
+ * @param {[number, number]} w - Segment end point as [x, y]
+ * @returns {number} Squared distance from point to segment
+ */
 function distToSegmentSquared(p, v, w) {
   var l2 = dist2(v, w);
   if (l2 === 0) return dist2(p, v);
@@ -22,9 +28,16 @@ function distToSegmentSquared(p, v, w) {
   return dist2(p, [v[0] + t * (w[0] - v[0]), v[1] + t * (w[1] - v[1])]);
 }
 
-// p - point
-// v - start point of segment
-// w - end point of segment
+/**
+ * Calculate the shortest distance from a point to a line segment.
+ *
+ * @param {[number, number]} p - Point as [x, y]
+ * @param {[number, number]} v - Segment start point as [x, y]
+ * @param {[number, number]} w - Segment end point as [x, y]
+ * @returns {number} Distance from point to segment
+ * @example
+ * distToSegment([5, 5], [0, 0], [10, 0]) // Returns 5 (perpendicular distance)
+ */
 function distToSegment(p, v, w) {
   return Math.sqrt(distToSegmentSquared(p, v, w));
 }

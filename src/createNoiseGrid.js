@@ -1,5 +1,20 @@
 import SimplexNoise from "simplex-noise";
 
+/**
+ * @typedef {Object} NoiseCell
+ * @property {number} x - Cell x position
+ * @property {number} y - Cell y position
+ * @property {number} width - Cell width
+ * @property {number} height - Cell height
+ * @property {number} noiseValue - Simplex noise value (-1 to 1)
+ */
+
+/**
+ * @typedef {Object} NoiseGridResult
+ * @property {NoiseCell[]} cells - Array of noise cells
+ * @property {function({x: number, y: number}): NoiseCell} lookup - Get cell at a position
+ */
+
 const defaultOpts = {
   width: 200,
   height: 200,
@@ -22,6 +37,23 @@ function lookup(cells, width, height, cols, resolution) {
   };
 }
 
+/**
+ * Create a grid of simplex noise values, useful for flow fields and textures.
+ *
+ * @param {Object} [opts] - Configuration options
+ * @param {number} [opts.width=200] - Grid width in pixels
+ * @param {number} [opts.height=200] - Grid height in pixels
+ * @param {number} [opts.resolution=8] - Number of cells in each dimension
+ * @param {number} [opts.xInc=0.01] - Noise x increment (lower = smoother)
+ * @param {number} [opts.yInc=0.01] - Noise y increment (lower = smoother)
+ * @param {number} [opts.seed] - Random seed for reproducible noise
+ * @returns {NoiseGridResult} Grid with cells and lookup function
+ * @example
+ * const grid = createNoiseGrid({ width: 400, height: 400, resolution: 20 })
+ * // Get noise at any position
+ * const cell = grid.lookup({ x: 150, y: 200 })
+ * const angle = cell.noiseValue * Math.PI * 2 // Use for flow field
+ */
 function createNoiseGrid(opts) {
   opts = Object.assign({}, defaultOpts, opts);
 
