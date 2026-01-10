@@ -47,31 +47,34 @@ function createVoronoiDiagram(opts) {
     });
   }
 
-  let cells = [];
+  const cells = [];
+  const pointIndexToCell = new Map();
 
   for (let i = 0; i < delaunay.points.length; i += 2) {
-    const cell = voronoi.cellPolygon(i >> 1);
+    const pointIndex = i >> 1;
+    const cell = voronoi.cellPolygon(pointIndex);
 
     if (cell === null) continue;
 
-    cells.push({
+    const cellObj = {
       ...formatCell(cell),
-      neighbors: [...voronoi.neighbors(i >> 1)].map((index) => {
-        return {
-          ...formatCell(voronoi.cellPolygon(index)),
-        };
-      }),
-    });
+      _pointIndex: pointIndex,
+      neighbors: [],
+    };
+    cells.push(cellObj);
+    pointIndexToCell.set(pointIndex, cellObj);
+  }
+
+  for (const cell of cells) {
+    const neighborIndices = [...voronoi.neighbors(cell._pointIndex)];
+    cell.neighbors = neighborIndices
+      .map((idx) => pointIndexToCell.get(idx))
+      .filter((neighbor) => neighbor !== undefined);
+    delete cell._pointIndex;
   }
 
   return {
-    cells: cells.map((cell, index) => {
-      const neighbors = [...voronoi.neighbors(index)];
-
-      cell.neighbors = neighbors.map((index) => cells[index]);
-
-      return cell;
-    }),
+    cells,
     points: diagramPoints,
   };
 }
