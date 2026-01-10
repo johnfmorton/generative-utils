@@ -116,15 +116,12 @@ function getClosestEdgeToCentroid(points) {
 }
 
 function sortPointsByAngle(centroid, points) {
-  const centerPoint = centroid;
   const sorted = points.slice(0);
 
   const sortByAngle = (p1, p2) => {
     return (
-      (Math.atan2(p1[1] - centerPoint[1], p1[0] - centerPoint[0]) * 180) /
-        Math.PI -
-      (Math.atan2(p2[1] - centerPoint[1], p2[0] - centerPoint[0]) * 180) /
-        Math.PI
+      Math.atan2(p1[1] - centroid[1], p1[0] - centroid[0]) -
+      Math.atan2(p2[1] - centroid[1], p2[0] - centroid[0])
     );
   };
 
