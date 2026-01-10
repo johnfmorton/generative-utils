@@ -94,20 +94,21 @@ function formatCell(points) {
 function getClosestEdgeToCentroid(points) {
   const centroid = polygonCentroid(points);
   const pointsSorted = sortPointsByAngle(centroid, points);
+  const numPoints = pointsSorted.length;
 
-  let closest = distToSegment(centroid, pointsSorted[0], pointsSorted[1]);
+  if (numPoints < 2) {
+    return 0;
+  }
 
-  for (let i = 1; i < points.length - 1; i++) {
-    if (points[i + 1]) {
-      const dist = distToSegment(
-        centroid,
-        pointsSorted[i],
-        pointsSorted[i + 1]
-      );
+  let closest = Infinity;
 
-      if (dist < closest) {
-        closest = dist;
-      }
+  for (let i = 0; i < numPoints; i++) {
+    const p1 = pointsSorted[i];
+    const p2 = pointsSorted[(i + 1) % numPoints];
+    const dist = distToSegment(centroid, p1, p2);
+
+    if (dist < closest) {
+      closest = dist;
     }
   }
 
