@@ -5,7 +5,12 @@ function createCoordsTransformer(svg) {
     pt.x = e.clientX;
     pt.y = e.clientY;
 
-    return pt.matrixTransform(svg.getScreenCTM().inverse());
+    const ctm = svg.getScreenCTM();
+    if (ctm === null) {
+      return { x: pt.x, y: pt.y };
+    }
+
+    return pt.matrixTransform(ctm.inverse());
   };
 }
 
