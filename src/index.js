@@ -11,6 +11,7 @@ export { createVoronoiDiagram } from "./createVoronoiDiagram.js";
 export { createVoronoiDiagram as createVoronoiTessellation } from "./createVoronoiDiagram.js";
 export { seedPRNG } from "./prng.js";
 export { createNoiseGrid } from "./createNoiseGrid.js";
+export { createNoisyPath } from "./createNoisyPath.js";
 export { lerp } from "./lerp.js";
 export { clamp } from "./clamp.js";
 export {
